@@ -14,7 +14,7 @@
 
     - role: genlab.dnsmasq
       iface: lo
-      domain: adm.vpn
+      domain: adm.local
       dns_port: 5300
       nodes:
         - name: hub
