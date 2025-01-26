@@ -1,18 +1,12 @@
-template
+ansible-dnsmasq
 =========
 
-Template for Ansible role monorepos.
-
-⚠️ Do not forget to update:
-
-- `meta/main.yml`
-- Conda/Mamba manifests
-- this README =)
+Deploy dnsmasq on the target node. For now, supports only DNS functionality (DHCP and TFTP are not configuratble).
 
 Requirements
 ------------
 
-None
+Take care to open the port you choose for dnsmasq to serve queries on. This role does not handle firewall configuration. 
 
 Role Variables
 --------------
@@ -29,7 +23,7 @@ Example Playbook
 
 ```yaml
 roles:
-    - role: genlab.template
+    - role: genlab.dnsmasq
 ```
 
 License
