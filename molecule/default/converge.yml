@@ -1,15 +1,13 @@
 ---
 - name: Converge
   hosts: all
-  vars:
-    dns_port: 5353
   roles:
     - role: genlab.ufw
       disable_ipv6: true
       rules:
         - rule: allow
           # proto: udp
-          port: "{{ dns_port }}"
+          port: 5353
           interface: lo
           direction: in
           comment: "Allow dnsmasq to serve DNS queries on the given interface"
@@ -17,7 +15,7 @@
     - role: genlab.dnsmasq
       iface: lo
       domain: adm.vpn
-      dns_port: "{{ dns_port }}"
+      dns_port: 5353
       nodes:
         - name: hub
           ip: 127.0.0.1
