@@ -17,7 +17,7 @@
     - role: genlab.dnsmasq
       iface: lo
       domain: adm.vpn
+      dns_port: "{{ dns_port }}"
       nodes:
         - name: hub
           ip: 127.0.0.1
-          port: "{{ dns_port }}"
